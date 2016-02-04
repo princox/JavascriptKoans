@@ -39,12 +39,16 @@ describe("About Applying What We Have Learnt", function() {
 
     var productsICanEat = [];
     //filter, all, any
-    var NoMushRooms = _(products).filter(function(x){
+    var NoNuts = _(products).filter(function(x){
       // x -> products를 받음
       if(x.containsNuts == false)
       return x;
     });
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    var noMushRooms = _(products).filter(fuction(x){
+      if(x.ingredients == false)
+      return x;
+    });
+      expect(productsICanEat.length).toBe(FILL_ME_IN);
   });
 
   /*********************************************************************************/
