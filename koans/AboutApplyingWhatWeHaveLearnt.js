@@ -6,11 +6,11 @@ describe("About Applying What We Have Learnt", function() {
 
   beforeEach(function () {
     products = [
-       { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
-       { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
-       { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
-       { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
-       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+      { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
+      { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
+      { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
+      { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
+      { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
     ];
   });
 
@@ -21,15 +21,15 @@ describe("About Applying What We Have Learnt", function() {
     var i,j,hasMushrooms, productsICanEat = [];
 
     for (i = 0; i < products.length; i+=1) {
-        if (products[i].containsNuts === false) {
-            hasMushrooms = false;
-            for (j = 0; j < products[i].ingredients.length; j+=1) {
-               if (products[i].ingredients[j] === "mushrooms") {
-                  hasMushrooms = true;
-               }
-            }
-            if (!hasMushrooms) productsICanEat.push(products[i]);
+      if (products[i].containsNuts === false) {
+        hasMushrooms = false;
+        for (j = 0; j < products[i].ingredients.length; j+=1) {
+          if (products[i].ingredients[j] === "mushrooms") {
+            hasMushrooms = true;
+          }
         }
+        if (!hasMushrooms) productsICanEat.push(products[i]);
+      }
     }
 
     expect(productsICanEat.length).toBe(1);
@@ -37,15 +37,14 @@ describe("About Applying What We Have Learnt", function() {
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
-      var productsICanEat = [];
-
-      var NoMushRooms = _(products).filter(function(x){
-        // x -> products를 받음
-        if(x.containsNuts == false)
-        return x;
-
-      });
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+    var productsICanEat = [];
+    //filter, all, any
+    var NoMushRooms = _(products).filter(function(x){
+      // x -> products를 받음
+      if(x.containsNuts == false)
+      return x;
+    });
+    expect(productsICanEat.length).toBe(FILL_ME_IN);
   });
 
   /*********************************************************************************/
@@ -70,13 +69,13 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   /*********************************************************************************/
-   it("should count the ingredient occurrence (imperative)", function () {
+  it("should count the ingredient occurrence (imperative)", function () {
     var ingredientCount = { "{ingredient name}": 0 };
 
     for (i = 0; i < products.length; i+=1) {
-        for (j = 0; j < products[i].ingredients.length; j+=1) {
-            ingredientCount[products[i].ingredients[j]] = (ingredientCount[products[i].ingredients[j]] || 0) + 1;
-        }
+      for (j = 0; j < products[i].ingredients.length; j+=1) {
+        ingredientCount[products[i].ingredients[j]] = (ingredientCount[products[i].ingredients[j]] || 0) + 1;
+      }
     }
 
     expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
@@ -95,23 +94,23 @@ describe("About Applying What We Have Learnt", function() {
   /*
   it("should find the largest prime factor of a composite number", function () {
 
-  });
+});
 
-  it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
+it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
 
-  });
+});
 
-  it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
+it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
 
 
-  });
+});
 
-  it("should find the difference between the sum of the squares and the square of the sums", function () {
+it("should find the difference between the sum of the squares and the square of the sums", function () {
 
-  });
+});
 
-  it("should find the 10001st prime", function () {
+it("should find the 10001st prime", function () {
 
-  });
-  */
+});
+*/
 });
